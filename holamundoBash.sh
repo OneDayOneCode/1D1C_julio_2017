@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-#Este script funciona en linux
-#En bash, tan solo es una impresión de línea
+#Este script funciona en linux asignando los permisos de ejecución con el comando - sudo chmod + x holamundoBash.sh - 
+#Siempre y cuando se encuentre en el directorio que contiene el archivo
 
-echo "Hola Mundo...".zndwhjkxdw z
+echo "Hola Mundo en bash Linux"
