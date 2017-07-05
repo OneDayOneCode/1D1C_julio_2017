@@ -1,12 +1,12 @@
 #include <iostream>
 
+using namespace std;
+
 /*
 **
 *** Este programa esta escrito C++ lo que hace es una simple suma
 **
 */
-
-using namespace std;
 
 class Suma //Se define la clase
 {
