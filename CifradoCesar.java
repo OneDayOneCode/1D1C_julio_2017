@@ -136,7 +136,7 @@ class Main
 	{
 		/*Test
 		CifradoCesar o=new CifradoCesar();
-		System.out.println(o.cifrar("Hola Mundo",5));
-        System.out.println(o.descifrar("Mtpf Qzrit",5));*/
+		System.out.println(o.cifrar("hola Mundo",5));
+        System.out.println(o.descifrar("mtpf Qzrit",5));*/
 	}
 }
