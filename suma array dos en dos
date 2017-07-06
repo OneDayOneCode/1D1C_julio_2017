@@ -1,0 +1,23 @@
+
+public class objeto {
+    public static void main(String[]arg){
+        
+        int arra2 [] = new int[6]; //creacion array tamano seis 
+        
+        int ac = 0;  //almacen
+        
+        for (int i = 0; i < arra2.length; i++) {  // ciclo recorrer array 
+            
+           ac += arra2[i] +2;   //suma mas asignacion 
+            arra2[i] = ac ; 
+         
+            
+        }
+        System.out.println("suma "+ ac);
+        for (int i = 0; i < arra2.length; i++) {
+            System.out.println(arra2[i]);
+            
+        }
+    }
+    
+}
