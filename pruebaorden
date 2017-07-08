@@ -1,0 +1,78 @@
+
+import java.util.Scanner;
+public class clase {
+    private String[] nombres;
+    private int[] edad;
+    public void tamanoarreglo(){
+          this.nombres = new String[3];
+          this.edad = new int[3];
+    }
+    public void llenararreglo(){
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("ingresa el nombre ");
+             this.nombres[i]= sc.next();
+            System.out.println("ingresa su edad ");
+             this.edad[i] = sc.nextInt();
+             System.out.println("\n");
+        }
+    }
+    public void buscarnombre(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("ingresa la edad para buscar su nombre");
+        int buscar = sc.nextInt();
+        for (int i = 0; i < 3; i++) {
+            if(buscar == this.edad[i]){
+                System.out.println(this.nombres[i]);
+            }      
+        }
+        System.out.println("\n");
+    }
+    public void ordenaredades(){
+        int guardar;
+        System.out.println("imprimir forma ordenada ");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2-i; j++) {
+                if(this.edad[j] > this.edad[j+1]){
+                guardar = this.edad[j];
+                this.edad[j] = this.edad[j+1];
+                this.edad[j+1] = guardar;
+                }
+            }
+        }
+        for(Integer ord : this.edad){
+            System.out.println(ord);
+        }
+    }
+    public void ordenarnombre(){
+        String guardar1;
+        System.out.println("imprimir de forma alfabetico");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2-i; j++) {
+                if(this.nombres[j].compareTo(this.nombres[j+1]) > 0){
+                    guardar1 = this.nombres[j];
+                    this.nombres[j] = this.nombres[j+1];
+                    this.nombres[j+1] = guardar1;
+                }
+            }
+            
+        }
+        for(String ord : this.nombres){
+            System.out.println(ord);
+        }
+        System.out.println("\n");
+      
+    }
+    public static void main(String []args){
+      clase obj = new clase();
+      obj.tamanoarreglo();
+      obj.llenararreglo();
+      obj.buscarnombre();
+      obj.ordenarnombre();
+      obj.ordenaredades();
+        
+    }
+       
+            
+    
+}
