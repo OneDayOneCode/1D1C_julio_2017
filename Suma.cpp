@@ -19,14 +19,14 @@ class Suma //Se define la clase
 
 		void obtener_numero_1() //Se obtiene el numero 1
 		{
-			std::cout<<"Numero 1:";
-			std::cin>>this->numero_1;
+			cout<<"Numero 1:";
+			cin>>this->numero_1;
 		}
 
 		void obtener_numero_2() //Se obtiene el numero 2
 		{
-			std::cout<<"Numero 2:";
-			std::cin>>this->numero_2;
+			cout<<"Numero 2:";
+			cin>>this->numero_2;
 		}
 
 		int obtener_suma() //Se obtiene el resultado de la suma 
