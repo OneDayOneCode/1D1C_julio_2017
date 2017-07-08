@@ -1,0 +1,15 @@
+public class tecleenegativo {
+    public static void main(String[] args) {
+        // Pedir números hasta que se teclee uno negativo, y mostrar cuántos números se han introducido.
+       Scanner  sc = new Scanner(System.in);
+       int numero = 1, contador = 0;
+        while(numero !=0){
+            System.out.println("ingrese un numero ");
+            numero = sc.nextInt();
+            contador = contador+1;
+        }
+        System.out.println("ingreso "+contador+ " numeros asta que salio cero ");
+     //:v    
+    }
+    
+}
