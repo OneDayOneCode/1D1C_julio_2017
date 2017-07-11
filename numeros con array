@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class vector {
+
+    public static void main(String[] args) {
+        //Leer 5 números por teclado y a continuación realizar la media de los números positivos, la media
+        //  de los negativos y contar el número de ceros.
+        Scanner sc = new Scanner(System.in);
+        System.out.println("cuantos numeros va a ingresar ");
+        int tam = sc.nextInt();
+        
+        int[] numero = new int[tam];
+        
+        int  conP = 0, conN = 0, cero = 0, media = 0; //contador positivo = conP    **contador negativo = conN    ** media 
+        
+        for (int i = 0; i < numero.length; i++) {
+            System.out.println("ingrese los numeros  :)");
+            numero[i] = sc.nextInt();   //obtener datos    
+        }
+        
+        for (int i = 0; i < numero.length; i++) {
+            if (numero[i] >= 1) {
+                conP = conP + 1;  //conp++
+            }
+            else{
+                if (numero[i] ==0) {
+                    cero = cero + 1; //cero++
+                    
+                }
+                else{
+                    if(numero [i] <=-1){ //condicional se puede omitir ya que por defecto la parte else tomaria los datos negativos
+                        conN ++;
+                    }
+                }
+            }
+            
+        }
+        
+        for (int i = 0; i < numero.length; i++) {  // sacar la media
+            numero[i] = numero[i] + media;
+            media = numero [i];
+            
+        }
+        double resultado = media /numero.length;
+        
+        System.out.print("numero positivos son "+ conP);
+        System.out.print("numeros negativos son "+ conN);
+        System.out.print("ceros introducidos son "+ cero);
+        System.out.print("media es "+ resultado );
+        
+        
+         
+        
+    }
+    
+}
