@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class orden {
+    public static void main(String[] args) {
+     /*   Leer 10 números enteros. Debemos mostrarlos en el siguiente orden: el primero, el último, el segundo, el
+penúltimo, el tercero, etc.*/
+        Scanner sc = new Scanner(System.in);    
+        
+        int []vector = new int[10];
+        for (int i=0;i<vector.length;i++){
+            System.out.print("introduze los numeros : ");
+            vector[i]=sc.nextInt();
+        }
+        
+        System.out.println("El resultado es:");
+        for (int i=0;i<=4;i++){
+            System.out.println (vector[i]); //imprime del forma ascendente
+            System.out.println(vector[9-i]); //decendente
+        }
+        
+        
+    }
+    
+}
