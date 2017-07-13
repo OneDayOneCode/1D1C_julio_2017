@@ -26,7 +26,7 @@ while(contador <= 2):
 	# un for que descomprondra la lista y hara un recorrido
 	for x in numeros:
 		# Por si hay un caracter de doble espacio lo eliminamos
-		if(len(x) != 0):	
+		if (len(x) != 0):	
 			suma += int(x)   
 	
 	# Agregamos el resultado a unestra lista
