@@ -29,7 +29,7 @@ while(contador <= 2):
 		if (len(x) != 0):	
 			suma += int(x)   
 	
-	# Agregamos el resultado a unestra lista
+	# Agregamos el resultado a nuestra lista
 	resultados.append(suma)
 	contador += 1
 
