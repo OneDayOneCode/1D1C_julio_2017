@@ -15,7 +15,7 @@ contador = 0
 # Almacenara los resultados de las suma
 resultados = [] 
 
-while(contador <= 2):
+while (contador <= 2):
 
 	numero_de_entradas = str(input())
 
