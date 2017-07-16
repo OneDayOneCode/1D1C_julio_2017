@@ -1,7 +1,10 @@
 
 class CalificacionNoValida extends Exception
 {
-     public CalificacionNoValida(){} 
+     public CalificacionNoValida()
+     {
+     
+     } 
   
      public CalificacionNoValida(String mensaje)
      {
