@@ -7,18 +7,19 @@ import java.util.Scanner;
 
 public class Alumno
 {   
-     private Scanner entrada;
      private int sumaDeCalificaciones;     
 
-     public Alumno(){}
+     public Alumno()
+     {
+     
+     }
 
      public void sumarCalificaciones() throws CalificacionNoValida
      {
 	  for(int i = 1; i <= 5; i++)
           {
  	      this.sumaDeCalificaciones += this.validarCalificacion(i);
-          }
-	  this.entrada.close(); 	
+	  } 	
      }
 		
      public double calcularPromedio()
@@ -54,7 +55,7 @@ public class Alumno
 	
      private String capturarCalificacion(int ndlc)
      {
-          this.entrada = new Scanner(System.in);                 
+          Scanner entrada = new Scanner(System.in);                 
 
           System.out.printf("Captura la calificación #%d:", ndlc);       
     	  return entrada.nextLine();
