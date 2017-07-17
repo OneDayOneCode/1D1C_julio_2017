@@ -4,17 +4,17 @@ class CalificacionNoValida extends Exception
      public CalificacionNoValida()
      {
      
-     } 
-  
-     public CalificacionNoValida(String mensaje)
-     {
-	 super(mensaje);
      }
 
      // Acesso a Validacion : aav
      public CalificacionNoValida(boolean aav, String calificacion) throws CalificacionNoValida
      {
 	 if(aav) this.validarCalificacion(calificacion);
+     }
+     
+     public CalificacionNoValida(String mensaje)
+     {
+	 super(mensaje);
      }
 
      // Calificacion a validar: cav
