@@ -12,7 +12,7 @@ class CalificacionNoValida extends Exception
 	 if(aav) this.validarCalificacion(calificacion);
      }
      
-     public CalificacionNoValida(String mensaje)
+     private CalificacionNoValida(String mensaje)
      {
 	 super(mensaje);
      }
