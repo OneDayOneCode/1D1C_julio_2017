@@ -1,0 +1,111 @@
+
+# Manual básico de MariaDB en Debian 9
+
+# Primero actualizamos las cabeceras de los repositorios
+
+	sudo apt-get update
+
+# Seguido actualizamos el sistema
+
+	sudo apt-get upgrade
+
+# Después checamos si el paquete python-software-properties se encuentra
+# en los repositorios
+
+	apt-cache search python-software-properties
+
+# El paquete mencionado se encarga de gestionar los repositorios desde los que
+# se instalan los programas.
+# Este programa proporciona una abstracción de los repositorios de apt que usa. 
+# Le permite gestionar fácilmente su distribución y las fuentes de programas de proveedores independientes. 
+# https://packages.debian.org/es/wheezy/python-software-properties
+
+# Si el programa existe (siempre esta en Debian) lo instalamos
+
+	sudo apt-get install python-software-properties
+	
+# Seguido de la instalación checamos el paquete mariadb-server
+
+	apt-cache search mariadb-server
+
+# Seguido de la verificación instalamos el paquete
+
+	sudo apt-get install mariadb-server
+
+# Durante el proceso de instalación nos va a pedir una contraseña de root
+# Esta contraseña de root no tiene nada que ver con la del sistema operativo
+# Es la contraseña del superusuario (root) del manejador de bases de datos MariaDB
+# Finaliza la instalación.
+
+###################### Ingresar al gestor (manejador) de bases de datos MAriaDB #####################
+# Por la terminal de linux ingresamos con el siguiente comando
+
+	mysql -u root -p
+
+# la opción -u es de usuario root, la opción -p es que este usuario tiene una contraseña
+# Nos pedira la contraseña que no se visualiza a la hora de ingresar y enter !
+# Listo, estamos dentro de MariaDB ahora podemos crear Bases de Datos, usuarios y administrarlo todo!
+# Si queremos salir solo basta con teclear el comando exit.
+
+######### Comandos de utilidad  ##############
+
+	status
+	
+# status nos devuelve información de la sesión de gestor de bases de datos
+# el usuario que ingreso, la versión, entre otros datos.
+
+# Mostrar bases de datos creadas y las que vienen por defecto
+
+	show databases;
+
+# toda instrucción SQL termina con ; este comando nos muestra las bases de datos en el gestor
+
+#Crear bases de datos, un ejemplo con una que se llama libreria
+
+	create database libreria;
+
+# Esto crea una base de datos llamada libreria, es verdad que hay más opciones
+# como el lugar de almacenamiento entre otras pero por ahora es lo básico para el ejemplo.
+# No se pueden agregar espacios en el nombre si es necesario se usa _ guión bajo
+# Podemos verificar con show databases; si ahora existe.
+
+# Eliminar nuestra base de datos, la sintaxis es super simple.
+
+	drop database libreria;
+	
+# Este comando elimina nuestra base de datos
+
+# Ahora crearemos una base de datos y dos usuarios para esta.
+
+	create database Universidad;
+	create user 'usuario1'@'localhost' IDENTIFIED BY 'passwuser1';
+	create user 'usuario2'@'localhost' IDENTIFIED BY 'passwuser2';
+
+# La sinstaxis de la creación de usuarios ingresa el nombre de usuario y su conraseña como se ve en el ejemplo
+
+# Vamos a crear los permisos y de los usuarios y sobre que base de datos se van a aplicar
+
+	GRANT SELECT ON Universidad.* TO 'usuario1'@'locahost' IDENTIFIED BY 'passwuser1';
+
+# Este usuario solo tiene permisos de consultar con SELECT.
+
+	GRANT SELECT,INSERT,DROP,CREATE ON Universidad.* TO 'usuario2'@'locahost' IDENTIFIED BY 'passwuser2';
+
+# Este otro usuario tiene más permisos como crear, eliminar e insertar datos
+
+######## NOTA:
+	Esto delos permisos se hace como medida de seguridad al acceso de la información
+	Así como se asignan permisos también se espeífica que solo pueden acceder a esa base de datos.
+
+
+# Salimos con exit e ingresamos con uno de los usuarios
+
+	exit
+	mysql -u usuario1 -p
+
+# como se puede ver con el comando show databases solo nos sale su base de datos y la de información general, ya no las demás.
+
+
+#  Hasta aquí con esta pequeña explicación, más adelante se pretende explicar creación de tablas, insertar datos etc.
+
+########  Alberto Cardona
