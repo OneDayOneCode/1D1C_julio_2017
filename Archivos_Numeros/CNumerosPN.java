@@ -23,11 +23,13 @@ public class CNumerosPN
 		this.archivo = new DataInputStream( new FileInputStream("numeros.dat"));
 	}
 	
-	// Numero de Numeros Positivos y Negativos: NPN
-	
+	// Numero de Numeros Positivos y Negativos: NPN	
 	/*
-		Deprecated significa que sólo está ahí para que las aplicaciones antiguas funcionen, pero no se debería usar en ningún caso en aplicaciones nuevas, 		porque ya hay formas mejores o más estables de hacer lo mismo. De hecho, los métodos "deprecated" es más que probable que desaparezcan en próximas 			versiones.
-
+		Deprecated significa que sólo está ahí para que las aplicaciones antiguas funcionen, 
+		pero no se debería usar en ningún caso en aplicaciones nuevas, 		
+		porque ya hay formas mejores o más estables de hacer lo mismo. 
+		De hecho, los métodos "deprecated" es más que probable que desaparezcan 
+		en próximas versiones.
 	*/
 	@Deprecated
 	public void numeroDeNPN()
