@@ -1,0 +1,55 @@
+package tablas_mezclar;
+import java.util.Scanner;
+public class tabla {
+    public static void main(String[] args) {
+        /* Leer los datos correspondiente a dos tablas de 12 elementos numéricos, y mezclarlos en una tercera de la
+        forma: 3 de la tabla A, 3 de la B, otros 3 de A, otros 3 de la B, etc.*/
+        int tabla1[] = new int [12];
+        int tabla2[] = new int [12];
+        int mezcla[] = new int [24]; 
+        //    :V 
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("contenido tabla 1");
+        for (int i = 0; i <tabla1.length; i++) {
+            System.out.print("ingrese dato "+i+ " = ");
+            tabla1[i] = sc.nextInt();
+        }
+        
+        System.out.println("contenido tabla 2");
+        for (int i = 0; i <tabla2.length; i++) {
+            System.out.print("ingrese dato "+i+ " = ");
+            tabla2[i] = sc.nextInt();
+        }
+        
+        //tres en tres :v 
+        
+        int j = 0, i = 0;
+        
+       
+                while (i<12){
+            // copiamos 3 de a
+            for (int k=0;k<3; k++)
+            {
+                mezcla[j]=tabla1[i+k];
+                j++;
+            }
+            // copiamos 3 de b
+            for (int k=0;k<3;k++)
+            {
+                mezcla[j]=tabla2[i+k];
+                j++;
+            }
+            // como hemos copiado 3 de a y b, incrementamos la i en 3.
+            i+=3;
+            // la j se incrementa cada vez que se añade un elemento a la tabla c.
+            }
+                
+                
+        System.out.println("La tabla c queda: ");
+        for (j=0;j<24;j++){ // seguimos utilizando j, para la tabla c. Aunque se podría utilizar i.
+            System.out.print(mezcla[j]+"  \n");
+        }
+    }
+    
+}
